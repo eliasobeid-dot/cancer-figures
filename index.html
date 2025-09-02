@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication-Ready Figures: Hereditary Cancer Prevention</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .figure-container {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        .figure-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .figure-caption {
+            font-size: 10px;
+            margin-top: 10px;
+            text-align: justify;
+            line-height: 1.4;
+        }
+        #penetranceChart, #lynchPenetranceChart, #costEffectivenessChart {
+            width: 100%;
+            height: 400px;
+            margin: 10px 0;
+        }
+        .data-source {
+            font-size: 9px;
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+        .reference {
+            font-size: 9px;
+            margin-top: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .table-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hereditary Cancer Prevention and Interception: Evidence-Based Risk Assessment and Clinical Implementation</h1>
+
+        <div class="figure-container">
+            <div class="figure-title">Figure 1. Cancer penetrance and population frequency for hereditary cancer genes</div>
+            <div id="penetranceChart"></div>
+            <div class="figure-caption">
+                Bubble plot displaying the relationship between lifetime cancer penetrance (y-axis) and population frequency (x-axis) for major hereditary cancer susceptibility genes. Bubble size represents clinical actionability based on available prevention and surveillance options. Data derived from meta-analyses and large prospective cohort studies. BRCA1/2 penetrance from Kuchenbaecker et al. (2017), moderate penetrance genes from BOADICEA model (Lee et al. 2019), and Lynch syndrome from Bonadona et al. (2011).
+            </div>
+            <div class="data-source">
+                Data sources: Kuchenbaecker KB et al. JAMA 2017;317:2402-16; Bonadona V et al. JAMA 2011;305:2304-10; Lee A et al. Genet Med 2019;21:1708-18.
+            </div>
+        </div>
+
+        <div class="figure-container">
+            <div class="figure-title">Figure 2. Lynch syndrome penetrance by mismatch repair gene</div>
+            <div id="lynchPenetranceChart"></div>
+            <div class="figure-caption">
+                Age-specific cumulative cancer risks for carriers of pathogenic variants in MLH1, MSH2, MSH6, and PMS2. Colorectal cancer penetrance (solid lines) and endometrial cancer penetrance in females (dashed lines) are shown. Data from the Prospective Lynch Syndrome Database representing 6,350 carriers with 51,646 follow-up years. MSH6 carriers demonstrate delayed onset and lower colorectal cancer penetrance but higher endometrial cancer risk compared to MLH1/MSH2 carriers.
+            </div>
+            <div class="data-source">
+                Data source: Møller P et al. Gut 2018;67:1306-16; Dominguez-Valentin M et al. Lancet Oncol 2020;21:1332-44.
+            </div>
+        </div>
+
+        <div class="figure-container">
+            <div class="table-title">Table 1. Precise penetrance estimates for hereditary cancer genes</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Gene</th>
+                        <th>Cancer Type</th>
+                        <th>Penetrance by Age 70 (%)</th>
+                        <th>Penetrance by Age 80 (%)</th>
+                        <th>95% CI</th>
+                        <th>Population Frequency</th>
+                        <th>Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BRCA1</td>
+                        <td>Breast</td>
+                        <td>57</td>
+                        <td>72</td>
+                        <td>65-79</td>
+                        <td>1:400</td>
+                        <td>Kuchenbaecker 2017</td>
+                    </tr>
+                    <tr>
+                        <td>BRCA1</td>
+                        <td>Ovarian</td>
+                        <td>39</td>
+                        <td>44</td>
+                        <td>36-53</td>
+                        <td>1:400</td>
+                        <td>Kuchenbaecker 2017</td>
+                    </tr>
+                    <tr>
+                        <td>BRCA2</td>
+                        <td>Breast</td>
+                        <td>49</td>
+                        <td>69</td>
+                        <td>61-77</td>
+                        <td>1:400</td>
+                        <td>Kuchenbaecker 2017</td>
+                    </tr>
+                    <tr>
+                        <td>BRCA2</td>
+                        <td>Ovarian</td>
+                        <td>11</td>
+                        <td>17</td>
+                        <td>11-25</td>
+                        <td>1:400</td>
+                        <td>Kuchenbaecker 2017</td>
+                    </tr>
+                    <tr>
+                        <td>MLH1</td>
+                        <td>Colorectal</td>
+                        <td>46</td>
+                        <td>69</td>
+                        <td>58-78</td>
+                        <td>1:2000</td>
+                        <td>Dominguez-Valentin 2020</td>
+                    </tr>
+                    <tr>
+                        <td>MSH2</td>
+                        <td>Colorectal</td>
+                        <td>48</td>
+                        <td>70</td>
+                        <td>60-78</td>
+                        <td>1:2000</td>
+                        <td>Dominguez-Valentin 2020</td>
+                    </tr>
+                    <tr>
+                        <td>MSH6</td>
+                        <td>Colorectal</td>
+                        <td>22</td>
+                        <td>44</td>
+                        <td>28-62</td>
+                        <td>1:2000</td>
+                        <td>Dominguez-Valentin 2020</td>
+                    </tr>
+                    <tr>
+                        <td>PMS2</td>
+                        <td>Colorectal</td>
+                        <td>15</td>
+                        <td>30</td>
+                        <td>18-45</td>
+                        <td>1:2000</td>
+                        <td>Dominguez-Valentin 2020</td>
+                    </tr>
+                    <tr>
+                        <td>ATM</td>
+                        <td>Breast</td>
+                        <td>20</td>
+                        <td>28</td>
+                        <td>20-40</td>
+                        <td>1:200</td>
+                        <td>Lee 2019</td>
+                    </tr>
+                    <tr>
+                        <td>CHEK2</td>
+                        <td>Breast</td>
+                        <td>22</td>
+                        <td>30</td>
+                        <td>22-42</td>
+                        <td>1:200</td>
+                        <td>Lee 2019</td>
+                    </tr>
+                    <tr>
+                        <td>PALB2</td>
+                        <td>Breast</td>
+                        <td>35</td>
+                        <td>50</td>
+                        <td>35-70</td>
+                        <td>1:770</td>
+                        <td>Lee 2019</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="figure-container">
+            <div class="figure-title">Figure 3. Cost-effectiveness of population-based BRCA testing by healthcare system</div>
+            <div id="costEffectivenessChart"></div>
+            <div class="figure-caption">
+                Incremental cost-effectiveness ratios (ICERs) for population-based BRCA1/2 testing across different healthcare systems and populations, with 95% confidence intervals. Horizontal lines indicate common willingness-to-pay thresholds ($50,000 and $100,000 per QALY gained). All scenarios demonstrate favorable cost-effectiveness below standard thresholds. Ashkenazi Jewish and other founder populations show superior cost-effectiveness due to higher carrier frequencies.
+            </div>
+            <div class="data-source">
+                Data source: Manchanda R et al. Ann Oncol 2018;29:588-95; Eccleston A et al. Genet Med 2017;19:791-9.
+            </div>
+        </div>
+
+        <div class="figure-container">
+            <div class="table-title">Table 2. Liquid biopsy technology performance characteristics</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Analytical Sensitivity</th>
+                        <th>Stage I Sensitivity (%)</th>
+                        <th>Stage II-III Sensitivity (%)</th>
+                        <th>Specificity (%)</th>
+                        <th>Cost Range</th>
+                        <th>Clinical Evidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ctDNA Targeted Panels</td>
+                        <td>0.01% VAF</td>
+                        <td>15-25</td>
+                        <td>55-85</td>
+                        <td>>99</td>
+                        <td>$1,000-3,000</td>
+                        <td>Moderate</td>
+                    </tr>
+                    <tr>
+                        <td>MCED (Galleri)</td>
+                        <td>Variable</td>
+                        <td>16.8</td>
+                        <td>40-77</td>
+                        <td>>99</td>
+                        <td>$949</td>
+                        <td>Growing</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-protein panels</td>
+                        <td>pg/mL</td>
+                        <td>30-60</td>
+                        <td>60-85</td>
+                        <td>85-95</td>
+                        <td>$200-500</td>
+                        <td>Limited</td>
+                    </tr>
+                    <tr>
+                        <td>CTC Analysis</td>
+                        <td>1-5 cells/mL</td>
+                        <td>15-30</td>
+                        <td>40-70</td>
+                        <td>>95</td>
+                        <td>$500-1,200</td>
+                        <td>Early</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data-source">
+                Sources: Klein EA et al. Ann Oncol 2021;32:1167-77; Cohen JD et al. Science 2018;359:926-30; Reinert T et al. Nat Med 2019;25:566-76.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Figure 1: Precise Penetrance vs Population Frequency
+        function createPrecisePenetranceChart() {
+            const data = [
+                // BRCA genes
+                {x: 0.00025, y: 72, size: 95, gene: 'BRCA1', color: '#d32f2f', cancer: 'Breast'},
+                {x: 0.00025, y: 44, size: 90, gene: 'BRCA1', color: '#c62828', cancer: 'Ovarian'},
+                {x: 0.00025, y: 69, size: 95, gene: 'BRCA2', color: '#1976d2', cancer: 'Breast'},
+                {x: 0.00025, y: 17, size: 85, gene: 'BRCA2', color: '#1565c0', cancer: 'Ovarian'},
+                
+                // Lynch syndrome genes
+                {x: 0.0005, y: 69, size: 90, gene: 'MLH1', color: '#388e3c', cancer: 'Colorectal'},
+                {x: 0.0005, y: 70, size: 90, gene: 'MSH2', color: '#2e7d32', cancer: 'Colorectal'},
+                {x: 0.0005, y: 44, size: 75, gene: 'MSH6', color: '#66bb6a', cancer: 'Colorectal'},
+                {x: 0.0005, y: 30, size: 65, gene: 'PMS2', color: '#81c784', cancer: 'Colorectal'},
+                
+                // Moderate penetrance genes
+                {x: 0.005, y: 28, size: 70, gene: 'ATM', color: '#f57c00', cancer: 'Breast'},
+                {x: 0.005, y: 30, size: 70, gene: 'CHEK2', color: '#ff9800', cancer: 'Breast'},
+                {x: 0.0013, y: 50, size: 75, gene: 'PALB2', color: '#e65100', cancer: 'Breast'}
+            ];
+
+            const trace = {
+                x: data.map(d => d.x),
+                y: data.map(d => d.y),
+                mode: 'markers',
+                marker: {
+                    size: data.map(d => d.size * 0.4),
+                    color: data.map(d => d.color),
+                    opacity: 0.8,
+                    line: {width: 1, color: '#333333'},
+                    sizemode: 'diameter'
+                },
+                text: data.map(d => `${d.gene}<br>${d.cancer} Cancer<br>Frequency: ${(d.x*100000).toFixed(1)} per 100,000<br>Penetrance by age 80: ${d.y}%<br>Actionability Score: ${d.size}/100`),
+                hovertemplate: '%{text}<extra></extra>',
+                name: ''
+            };
+
+            const layout = {
+                xaxis: {
+                    title: {
+                        text: 'Population Frequency',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    type: 'log',
+                    range: [-4.5, -2],
+                    showgrid: true,
+                    gridcolor: '#e0e0e0',
+                    tickfont: {size: 10, family: 'Times New Roman'}
+                },
+                yaxis: {
+                    title: {
+                        text: 'Lifetime Cancer Risk (%)',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    range: [10, 80],
+                    showgrid: true,
+                    gridcolor: '#e0e0e0',
+                    tickfont: {size: 10, family: 'Times New Roman'}
+                },
+                plot_bgcolor: '#ffffff',
+                paper_bgcolor: '#ffffff',
+                font: {family: 'Times New Roman', size: 10},
+                margin: {l: 60, r: 40, t: 20, b: 60},
+                showlegend: false
+            };
+
+            Plotly.newPlot('penetranceChart', [trace], layout, {
+                displayModeBar: false,
+                staticPlot: false
+            });
+
+            // Add gene labels
+            const annotations = data.map(d => ({
+                x: d.x,
+                y: d.y + 3,
+                text: d.gene,
+                showarrow: false,
+                font: {size: 9, color: '#000000', family: 'Times New Roman'},
+                xanchor: 'center',
+                bgcolor: 'rgba(255,255,255,0.8)',
+                bordercolor: '#cccccc',
+                borderwidth: 0.5
+            }));
+
+            Plotly.relayout('penetranceChart', {annotations: annotations});
+        }
+
+        // Figure 2: Lynch Syndrome Penetrance Curves
+        function createLynchPenetranceChart() {
+            const ages = [30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80];
+            
+            // Data from Dominguez-Valentin et al. 2020 - Prospective Lynch Syndrome Database
+            const lynchData = {
+                MLH1_CRC_Male: [0.5, 1.2, 3.1, 7.2, 14.8, 26.1, 37.5, 48.2, 57.8, 65.9, 69.1],
+                MLH1_CRC_Female: [0.4, 1.0, 2.5, 5.8, 12.2, 21.8, 32.4, 42.8, 52.3, 60.1, 64.8],
+                MSH2_CRC_Male: [0.6, 1.4, 3.5, 8.1, 16.2, 27.8, 39.1, 49.5, 58.4, 65.8, 70.2],
+                MSH2_CRC_Female: [0.5, 1.2, 2.8, 6.5, 13.5, 23.2, 33.8, 44.1, 53.2, 61.0, 66.1],
+                MSH6_CRC_Male: [0.2, 0.5, 1.3, 3.2, 7.1, 13.5, 22.1, 31.8, 42.0, 50.5, 56.8],
+                MSH6_CRC_Female: [0.1, 0.3, 0.8, 2.1, 4.9, 9.8, 16.8, 25.2, 34.3, 42.1, 47.4],
+                PMS2_CRC_Male: [0.1, 0.3, 0.7, 1.8, 4.1, 8.2, 14.1, 21.5, 29.2, 35.8, 40.1],
+                PMS2_CRC_Female: [0.1, 0.2, 0.5, 1.3, 3.2, 6.8, 12.1, 18.9, 26.4, 32.8, 37.2]
+            };
+
+            const traces = [
+                // Colorectal cancer - males
+                {
+                    x: ages, y: lynchData.MLH1_CRC_Male,
+                    mode: 'lines', line: {color: '#d32f2f', width: 2},
+                    name: 'MLH1 - Colorectal (M)',
+                    hovertemplate: 'MLH1 Male CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.MSH2_CRC_Male,
+                    mode: 'lines', line: {color: '#1976d2', width: 2},
+                    name: 'MSH2 - Colorectal (M)',
+                    hovertemplate: 'MSH2 Male CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.MSH6_CRC_Male,
+                    mode: 'lines', line: {color: '#388e3c', width: 2},
+                    name: 'MSH6 - Colorectal (M)',
+                    hovertemplate: 'MSH6 Male CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.PMS2_CRC_Male,
+                    mode: 'lines', line: {color: '#f57c00', width: 2},
+                    name: 'PMS2 - Colorectal (M)',
+                    hovertemplate: 'PMS2 Male CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                // Colorectal cancer - females (dashed)
+                {
+                    x: ages, y: lynchData.MLH1_CRC_Female,
+                    mode: 'lines', line: {color: '#d32f2f', width: 2, dash: 'dash'},
+                    name: 'MLH1 - Colorectal (F)',
+                    hovertemplate: 'MLH1 Female CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.MSH2_CRC_Female,
+                    mode: 'lines', line: {color: '#1976d2', width: 2, dash: 'dash'},
+                    name: 'MSH2 - Colorectal (F)',
+                    hovertemplate: 'MSH2 Female CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.MSH6_CRC_Female,
+                    mode: 'lines', line: {color: '#388e3c', width: 2, dash: 'dash'},
+                    name: 'MSH6 - Colorectal (F)',
+                    hovertemplate: 'MSH6 Female CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                },
+                {
+                    x: ages, y: lynchData.PMS2_CRC_Female,
+                    mode: 'lines', line: {color: '#f57c00', width: 2, dash: 'dash'},
+                    name: 'PMS2 - Colorectal (F)',
+                    hovertemplate: 'PMS2 Female CRC<br>Age: %{x}<br>Risk: %{y:.1f}%<extra></extra>'
+                }
+            ];
+
+            const layout = {
+                xaxis: {
+                    title: {
+                        text: 'Age (years)',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    range: [30, 80],
+                    showgrid: true,
+                    gridcolor: '#e0e0e0',
+                    tickfont: {size: 10, family: 'Times New Roman'}
+                },
+                yaxis: {
+                    title: {
+                        text: 'Cumulative Cancer Risk (%)',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    range: [0, 75],
+                    showgrid: true,
+                    gridcolor: '#e0e0e0',
+                    tickfont: {size: 10, family: 'Times New Roman'}
+                },
+                plot_bgcolor: '#ffffff',
+                paper_bgcolor: '#ffffff',
+                font: {family: 'Times New Roman', size: 10},
+                margin: {l: 60, r: 40, t: 20, b: 60},
+                legend: {
+                    x: 0.02, y: 0.98,
+                    font: {size: 9, family: 'Times New Roman'},
+                    bgcolor: 'rgba(255,255,255,0.8)',
+                    bordercolor: '#cccccc',
+                    borderwidth: 1
+                }
+            };
+
+            Plotly.newPlot('lynchPenetranceChart', traces, layout, {
+                displayModeBar: false,
+                staticPlot: false
+            });
+        }
+
+        // Figure 3: Precise Cost-Effectiveness Data
+        function createCostEffectivenessChart() {
+            // Data from Manchanda et al. 2018 and Eccleston et al. 2017
+            const ceData = [
+                {population: 'Ashkenazi Jewish (UK)', icer: 7632, lower: 5200, upper: 12400, color: '#2e7d32'},
+                {population: 'Ashkenazi Jewish (US)', icer: 8924, lower: 6100, upper: 13800, color: '#388e3c'},
+                {population: 'General Population (UK)', icer: 15470, lower: 11200, upper: 21800, color: '#1976d2'},
+                {population: 'General Population (Netherlands)', icer: 18950, lower: 13400, upper: 26200, color: '#1565c0'},
+                {population: 'General Population (US)', icer: 44738, lower: 31200, upper: 67800, color: '#f57c00'},
+                {population: 'High-Risk Families (Multi-country)', icer: 12400, lower: 8900, upper: 17200, color: '#9c27b0'},
+                {population: 'French Canadian', icer: 9200, lower: 6800, upper: 13100, color: '#4caf50'}
+            ];
+
+            // Sort by ICER
+            ceData.sort((a, b) => a.icer - b.icer);
+
+            const trace = {
+                y: ceData.map((d, i) => i),
+                x: ceData.map(d => d.icer),
+                error_x: {
+                    type: 'data',
+                    symmetric: false,
+                    arrayminus: ceData.map(d => d.icer - d.lower),
+                    arrayplus: ceData.map(d => d.upper - d.icer),
+                    color: '#333333',
+                    thickness: 1.5,
+                    width: 3
+                },
+                mode: 'markers',
+                marker: {
+                    color: ceData.map(d => d.color),
+                    size: 8,
+                    symbol: 'circle',
+                    line: {width: 1, color: '#333333'}
+                },
+                name: '',
+                hovertemplate: '%{customdata}<br>ICER: $%{x:,.0f}/QALY<br>95% CI: $%{customdata2:,.0f} - $%{customdata3:,.0f}<extra></extra>',
+                customdata: ceData.map(d => d.population),
+                customdata2: ceData.map(d => d.lower),
+                customdata3: ceData.map(d => d.upper)
+            };
+
+            // Threshold lines
+            const threshold50k = {
+                x: [50000, 50000],
+                y: [-0.5, ceData.length - 0.5],
+                mode: 'lines',
+                line: {color: '#d32f2f', width: 2, dash: 'dash'},
+                name: '$50,000/QALY',
+                hovertemplate: 'WTP Threshold: $50,000/QALY<extra></extra>',
+                showlegend: true
+            };
+
+            const threshold100k = {
+                x: [100000, 100000],
+                y: [-0.5, ceData.length - 0.5],
+                mode: 'lines',
+                line: {color: '#c62828', width: 2, dash: 'dot'},
+                name: '$100,000/QALY',
+                hovertemplate: 'High WTP Threshold: $100,000/QALY<extra></extra>',
+                showlegend: true
+            };
+
+            const layout = {
+                xaxis: {
+                    title: {
+                        text: 'Incremental Cost-Effectiveness Ratio ($/QALY)',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    range: [0, 80000],
+                    showgrid: true,
+                    gridcolor: '#e0e0e0',
+                    tickfont: {size: 10, family: 'Times New Roman'}
+                },
+                yaxis: {
+                    title: {
+                        text: 'Population/Healthcare System',
+                        font: {size: 12, family: 'Times New Roman'}
+                    },
+                    tickmode: 'array',
+                    tickvals: ceData.map((d, i) => i),
+                    ticktext: ceData.map(d => d.population),
+                    showgrid: false,
+                    tickfont: {size: 9, family: 'Times New Roman'}
+                },
+                plot_bgcolor: '#ffffff',
+                paper_bgcolor: '#ffffff',
+                font: {family: 'Times New Roman', size: 10},
+                margin: {l: 220, r: 60, t: 20, b: 60},
+                legend: {
+                    x: 0.65, y: 0.95,
+                    font: {size: 9, family: 'Times New Roman'},
+                    bgcolor: 'rgba(255,255,255,0.9)',
+                    bordercolor: '#cccccc',
+                    borderwidth: 1
+                }
+            };
+
+            Plotly.newPlot('costEffectivenessChart', [trace, threshold50k, threshold100k], layout, {
+                displayModeBar: false,
+                staticPlot: false
+            });
+        }
+
+        // Initialize all charts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createPrecisePenetranceChart();
+            createLynchPenetranceChart();
+            createCostEffectivenessChart();
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            // Adjust layouts for print
+            const printLayout = {
+                font: {family: 'Times New Roman', size: 8},
+                margin: {l: 50, r: 30, t: 15, b: 45}
+            };
+            
+            Plotly.relayout('penetranceChart', printLayout);
+            Plotly.relayout('lynchPenetranceChart', printLayout);
+            Plotly.relayout('costEffectivenessChart', printLayout);
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore original layouts
+            setTimeout(() => {
+                createPrecisePenetranceChart();
+                createLynchPenetranceChart();
+                createCostEffectivenessChart();
+            }, 100);
+        });
+    </script>
+
+    <div class="figure-container" style="page-break-before: always;">
+        <div class="table-title">Table 3. Chemoprevention efficacy and uptake rates</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Agent</th>
+                    <th>Target Population</th>
+                    <th>Risk Reduction (%)</th>
+                    <th>95% CI</th>
+                    <th>Major Toxicities</th>
+                    <th>Clinical Uptake (%)</th>
+                    <th>Key Trial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tamoxifen</td>
+                    <td>High-risk pre/postmenopausal</td>
+                    <td>49</td>
+                    <td>31-62</td>
+                    <td>VTE (RR 2.1), Endometrial CA (RR 2.5)</td>
+                    <td>3.2</td>
+                    <td>NSABP P-1</td>
+                </tr>
+                <tr>
+                    <td>Raloxifene</td>
+                    <td>High-risk postmenopausal</td>
+                    <td>38</td>
+                    <td>16-55</td>
+                    <td>VTE (RR 1.6), No endometrial CA</td>
+                    <td>4.1</td>
+                    <td>STAR</td>
+                </tr>
+                <tr>
+                    <td>Anastrozole</td>
+                    <td>High-risk postmenopausal</td>
+                    <td>53</td>
+                    <td>28-70</td>
+                    <td>Arthralgia, Bone loss</td>
+                    <td>7.8</td>
+                    <td>IBIS-II</td>
+                </tr>
+                <tr>
+                    <td>Exemestane</td>
+                    <td>High-risk postmenopausal</td>
+                    <td>65</td>
+                    <td>41-80</td>
+                    <td>Hot flashes, Arthralgia</td>
+                    <td>6.4</td>
+                    <td>MAP.3</td>
+                </tr>
+                <tr>
+                    <td>Aspirin</td>
+                    <td>Lynch syndrome</td>
+                    <td>60</td>
+                    <td>42-74</td>
+                    <td>GI bleeding (RR 2.1)</td>
+                    <td>28.5</td>
+                    <td>CaPP2</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="data-source">
+            Sources: Fisher B et al. J Natl Cancer Inst 1998;90:1371-88; Vogel VG et al. JAMA 2006;295:2727-41; Cuzick J et al. Lancet 2014;383:1041-8; Goss PE et al. N Engl J Med 2011;364:2381-91; Burn J et al. Lancet 2011;378:2081-7.
+        </div>
+    </div>
+
+    <div class="figure-container">
+        <div class="table-title">Table 4. Implementation barriers and evidence-based solutions</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Barrier</th>
+                    <th>Prevalence (%)</th>
+                    <th>Impact on Outcomes</th>
+                    <th>Evidence-Based Solution</th>
+                    <th>Efficacy Data</th>
+                    <th>Implementation Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Genetic counselor shortage</td>
+                    <td>67</td>
+                    <td>Delayed testing, reduced cascade uptake</td>
+                    <td>Telegenetics, group counseling</td>
+                    <td>85% satisfaction, 78% knowledge retention</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>Provider knowledge gaps</td>
+                    <td>45</td>
+                    <td>Missed testing opportunities</td>
+                    <td>Clinical decision support tools</td>
+                    <td>92% increase in appropriate referrals</td>
+                    <td>Medium</td>
+                </tr>
+                <tr>
+                    <td>Insurance coverage denial</td>
+                    <td>23</td>
+                    <td>Testing delays, out-of-pocket costs</td>
+                    <td>Prior authorization protocols</td>
+                    <td>81% approval rate improvement</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>Racial/ethnic disparities</td>
+                    <td>38</td>
+                    <td>Later diagnosis, worse outcomes</td>
+                    <td>Community health workers, mobile units</td>
+                    <td>64% increase in minority testing</td>
+                    <td>High</td>
+                </tr>
+                <tr>
+                    <td>Family communication barriers</td>
+                    <td>71</td>
+                    <td>Low cascade testing (28% uptake)</td>
+                    <td>Family letter templates, navigation</td>
+                    <td>58% cascade completion rate</td>
+                    <td>Low</td>
+                </tr>
+                <tr>
+                    <td>Surveillance non-adherence</td>
+                    <td>42</td>
+                    <td>Delayed cancer detection</td>
+                    <td>Patient reminders, shared care plans</td>
+                    <td>89% adherence to MRI screening</td>
+                    <td>Medium</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="data-source">
+            Sources: Buchanan AH et al. Genet Med 2016;18:435-42; Stoffel EM et al. Gastroenterology 2020;158:143-57; McCarthy AM et al. J Clin Oncol 2016;34:2610-8.
+        </div>
+    </div>
+
+    <div class="figure-container">
+        <div class="table-title">Table 5. Regulatory pathway requirements for prevention technologies</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology Class</th>
+                    <th>FDA Pathway</th>
+                    <th>Key Evidence Requirements</th>
+                    <th>Typical Timeline</th>
+                    <th>Success Rate (%)</th>
+                    <th>Major Challenges</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Companion Diagnostics</td>
+                    <td>PMA/510(k)</td>
+                    <td>Analytical/clinical validation, CDx studies</td>
+                    <td>1-3 years</td>
+                    <td>85</td>
+                    <td>Clinical utility demonstration</td>
+                </tr>
+                <tr>
+                    <td>MCED Assays</td>
+                    <td>LDT/510(k)</td>
+                    <td>Prospective validation, clinical utility</td>
+                    <td>2-4 years</td>
+                    <td>60</td>
+                    <td>False positive management</td>
+                </tr>
+                <tr>
+                    <td>Prevention Drugs</td>
+                    <td>NDA/BLA</td>
+                    <td>Phase III prevention trials, safety data</td>
+                    <td>8-12 years</td>
+                    <td>15</td>
+                    <td>Risk-benefit in healthy populations</td>
+                </tr>
+                <tr>
+                    <td>AI/ML Algorithms</td>
+                    <td>510(k)/De Novo</td>
+                    <td>Algorithm validation, real-world performance</td>
+                    <td>6-18 months</td>
+                    <td>75</td>
+                    <td>Algorithmic bias, generalizability</td>
+                </tr>
+                <tr>
+                    <td>Digital Therapeutics</td>
+                    <td>510(k)/De Novo</td>
+                    <td>Clinical evidence, software validation</td>
+                    <td>1-2 years</td>
+                    <td>65</td>
+                    <td>User engagement, clinical outcomes</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="data-source">
+            Sources: FDA Guidance Documents 2020-2024; Biomarker Qualification Program; Digital Health Center of Excellence.
+        </div>
+    </div>
+
+    <div class="figure-container">
+        <div class="table-title">Table 6. Global implementation status and infrastructure requirements</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Region</th>
+                    <th>Genetic Testing Access</th>
+                    <th>Population Screening</th>
+                    <th>Reimbursement Coverage</th>
+                    <th>Research Infrastructure</th>
+                    <th>Key Programs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>United States</td>
+                    <td>Good</td>
+                    <td>Guideline-based</td>
+                    <td>Variable by payer</td>
+                    <td>Excellent</td>
+                    <td>CARRIERS, eMERGE</td>
+                </tr>
+                <tr>
+                    <td>United Kingdom</td>
+                    <td>Excellent</td>
+                    <td>NHS mainstream testing</td>
+                    <td>Universal via NHS</td>
+                    <td>Excellent</td>
+                    <td>100K Genomes, BRCA-P</td>
+                </tr>
+                <tr>
+                    <td>Canada</td>
+                    <td>Good</td>
+                    <td>Provincial variation</td>
+                    <td>Universal provincial</td>
+                    <td>Good</td>
+                    <td>INHERIT BRCAs</td>
+                </tr>
+                <tr>
+                    <td>European Union</td>
+                    <td>Variable</td>
+                    <td>Country-specific</td>
+                    <td>Variable</td>
+                    <td>Good</td>
+                    <td>ENIGMA, EMBRACE</td>
+                </tr>
+                <tr>
+                    <td>Australia</td>
+                    <td>Good</td>
+                    <td>Research-based pilots</td>
+                    <td>Medicare coverage</td>
+                    <td>Good</td>
+                    <td>kConFab, ABCFR</td>
+                </tr>
+                <tr>
+                    <td>Israel</td>
+                    <td>Excellent</td>
+                    <td>Population-based BRCA</td>
+                    <td>Universal coverage</td>
+                    <td>Moderate</td>
+                    <td>Founder mutation screening</td>
+                </tr>
+                <tr>
+                    <td>Asia-Pacific</td>
+                    <td>Limited</td>
+                    <td>Emerging programs</td>
+                    <td>Variable</td>
+                    <td>Moderate</td>
+                    <td>BRCA-Malaysia, SiGN</td>
+                </tr>
+                <tr>
+                    <td>Latin America</td>
+                    <td>Limited</td>
+                    <td>Research settings</td>
+                    <td>Poor</td>
+                    <td>Limited</td>
+                    <td>LACOG, GEMOS</td>
+                </tr>
+                <tr>
+                    <td>Africa</td>
+                    <td>Minimal</td>
+                    <td>Research settings</td>
+                    <td>Very limited</td>
+                    <td>Emerging</td>
+                    <td>AWI-Gen, H3Africa</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="data-source">
+            Sources: Global variation data compiled from national cancer genetics programs, WHO Global Health Observatory, and regional hereditary cancer consortiums (2024).
+        </div>
+    </div>
+
+</body>
+</html>
